@@ -1,0 +1,8 @@
+.Container {
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    left: 40px;
+    right: 40px;
+}
