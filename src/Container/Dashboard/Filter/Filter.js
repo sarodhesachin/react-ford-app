@@ -1,5 +1,7 @@
 import React from 'react';
 
+import reset from '../../../refresh.svg'
+
 import constants from '../../../constants'
 import './Filter.css'
 
@@ -19,6 +21,7 @@ class Filter extends React.Component {
 
         let filter = filterResponse.Response.FilterDefinitions.FilterDefinition
         if(Array.isArray(filter)) {
+          console.log(filter)
           this.setState({
             exteriorFilter: filter[2].FilterItems.FilterItem,
             interiorFilter: filter[3].FilterItems.FilterItem
@@ -32,8 +35,16 @@ class Filter extends React.Component {
     return (
       <div className='Filter'>
         <div id='filter-text'>Filters</div>
-        <ExteriorColorFilter exteriorFilter={this.state.exteriorFilter}/>
-        <InteriorColorFilter interiorFilter={this.state.interiorFilter}/>
+        <ExteriorColorFilter 
+          exteriorFilter={this.state.exteriorFilter}
+          exteriorFilterHandler={this.props.exteriorFilterHandler}
+          resetHandler={this.props.resetHandler}
+        />
+        <InteriorColorFilter 
+          interiorFilter={this.state.interiorFilter}
+          interiorFilterHandler={this.props.interiorFilterHandler}
+          resetHandler={this.props.resetHandler}
+        />
       </div>
     )
   }
@@ -45,7 +56,12 @@ class FilterHeader extends React.Component {
       <div className='FilterHeader'>
         <div className='FilterName'>
           <div>{this.props.filterHeader}</div>
-          <div>reset</div>
+          <button 
+            style={{backgroundColor: 'white', border: "none", cursor: "pointer"}}
+            onClick={this.props.resetHandler}
+          >
+            <img className='Reset' src={reset} />
+          </button>
         </div>
         <hr />
       </div>
@@ -61,7 +77,12 @@ class ExteriorColorFilter extends React.Component {
       colorsList = <div>
         {
           this.props.exteriorFilter.map(element => {
-            return <ExteriorColorButton color={'#' + element.SwatchHexCode.slice(2)}/>
+            return <ExteriorColorButton 
+              name={element.Name} 
+              ID={element.ID} 
+              color={'#' + element.SwatchHexCode.slice(2)}
+              exteriorFilterHandler={this.props.exteriorFilterHandler}
+            />
           })
         }
       </div>
@@ -69,7 +90,10 @@ class ExteriorColorFilter extends React.Component {
 
     return (
       <div>
-        <FilterHeader filterHeader='Exterior Color'/>
+        <FilterHeader 
+          filterHeader='Exterior Color'
+          resetHandler={this.props.resetHandler}
+        />
         <p>Select as many as you like: </p>
         <p></p>
         {colorsList}
@@ -81,9 +105,13 @@ class ExteriorColorFilter extends React.Component {
 class ExteriorColorButton extends React.Component {
   render() {
     return (
-      <span className='Circle' 
+      <span 
+        className='Circle'
+        name={this.props.name}
+        id={this.props.ID}
         style={{backgroundColor: this.props.color}} 
-        />
+        onClick={this.props.exteriorFilterHandler}
+      /> 
     )
   }
 }
@@ -96,7 +124,13 @@ class InteriorColorFilter extends React.Component {
       colorsList = <div>
         {
           this.props.interiorFilter.map(element => {
-            return <InteriorColorButton imgSource={element.SwatchUrl}/>
+            return <InteriorColorButton 
+              imgSource={element.SwatchUrl}
+              name={element.Name} 
+              ID={element.ID} 
+              group={element.Group} 
+              interiorFilterHandler={this.props.interiorFilterHandler}
+            />
           })
         }
       </div>
@@ -104,7 +138,10 @@ class InteriorColorFilter extends React.Component {
 
     return (
       <div>
-        <FilterHeader filterHeader='Interior Color'/>
+        <FilterHeader 
+          filterHeader='Interior Color'
+          resetHandler={this.props.resetHandler}
+        />
         {colorsList}
       </div>
     )
@@ -114,7 +151,15 @@ class InteriorColorFilter extends React.Component {
 class InteriorColorButton extends React.Component {
   render() {
     return (
-      <img className='Circle' src={this.props.imgSource}/>
+      <button className='InteriorFiltersOptions' onClick={this.props.interiorFilterHandler}>
+        <img 
+          className='Circle' 
+          id={this.props.ID} 
+          src={this.props.imgSource}
+        />
+        <p id={this.props.Id} style={{margin:10}}>{this.props.group}</p>
+      </button>
+      
     )
   }
 }

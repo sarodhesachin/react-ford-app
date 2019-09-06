@@ -5,11 +5,13 @@
 .CarsList{
 	display: flex;
 	flex-flow: wrap;
+	justify-content: space-around;
 }
 
 .Car {
 	padding: 10px;
 	background-color: ghostwhite;
+	border-radius: 2%;
 	margin: 20px;
 	font-size: 15px;
 }

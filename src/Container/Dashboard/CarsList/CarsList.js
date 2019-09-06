@@ -1,31 +1,8 @@
 import React from 'react';
 
-import constants from '../../../constants'
 import './CarsList.css'
 
 class CarsListContainer extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      carDetails: []
-    }
-  }
-
-  componentDidMount = () => {
-    this.fetchCarDetails()
-  }
-
-  fetchCarDetails = () => {
-    fetch(constants.CARS_INVENTRY_URL).then(rawResponse => {
-      return rawResponse.json()
-    }).then(details => {
-      console.log(details)
-      this.setState({
-        carDetails: details.Response.VehicleSearch.Vehicles.Vehicle
-      })
-    })
-  }
 
   render() {
     return (
@@ -33,7 +10,7 @@ class CarsListContainer extends React.Component {
         <div>
           <p>DASHBOARD</p>
         </div>
-        <Cars carDetails={this.state.carDetails}/>
+        <Cars carDetails={this.props.carDetails}/>
       </div>
     )
   }
@@ -70,7 +47,6 @@ class Cars extends React.Component {
 class Car extends React.Component {
   render() {
     let imgSource = `http://build.ford.com/dig/Ford/${this.props.model.ModelName}/${this.props.model.Year}/HD-FULL/${this.props.imageToken}/EXT/1/vehicle.png?r=NaN`
-    console.log(imgSource)
 
     return (
       <div className='Car'>
