@@ -4,6 +4,7 @@
 	padding: 30px;
 	font-size: 12px;
 	box-shadow: 1px 1px 1px 0px;
+	min-width: 150px;
 }
 
 #filter-text {
@@ -36,7 +37,6 @@
 	background-color: white;
 	border: none;
 	align-items: center;
-	width:275px;
 	cursor: pointer;
 }
 

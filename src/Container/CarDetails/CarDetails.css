@@ -1,0 +1,57 @@
+.summary-section{
+	display: flex;
+	justify-content: space-between;
+}
+
+.price-summary-section{
+  align-items: flex-start;
+  margin: 100px;
+  width: 350px;
+}
+
+.info-section{
+  display: flex;
+  justify-content: space-between;
+  width: 290px;
+}
+
+.vehicle-summary-section{
+  display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+  width: 290px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px #888888;
+}
+
+.car-details-container{
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+	color: black;
+}
+
+.basic-details-section{
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.name-section{
+	padding: 50px;
+}
+
+
+.details-btn{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 2px;
+	border: none;
+}
+

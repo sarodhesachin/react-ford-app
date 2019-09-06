@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Routers, Route, Link } from "react-router-dom";
 
 import './CarsList.css'
 
@@ -25,12 +26,7 @@ class Cars extends React.Component {
         {
           this.props.carDetails.map(car => {
             return (
-              <Car 
-                model={car.Model} 
-                imageToken={car.ImageToken} 
-                vin={car.Vin} 
-                price={car.Pricing.MSRP}
-              />
+              <Car details={car} />
             )
           })
         }
@@ -46,16 +42,23 @@ class Cars extends React.Component {
 
 class Car extends React.Component {
   render() {
-    let imgSource = `http://build.ford.com/dig/Ford/${this.props.model.ModelName}/${this.props.model.Year}/HD-FULL/${this.props.imageToken}/EXT/1/vehicle.png?r=NaN`
+    let imgSource = `http://build.ford.com/dig/Ford/${this.props.details.Model.ModelName}/${this.props.details.Model.Year}/HD-FULL/${this.props.details.ImageToken}/EXT/1/vehicle.png?r=NaN`
 
     return (
       <div className='Car'>
         <img src={imgSource}/>
-        <label>{`${this.props.model.Year} ${this.props.model.ModelName} ${this.props.model.Make}`}</label>
+        <label>{`${this.props.details.Model.Year} ${this.props.details.Model.ModelName} ${this.props.details.Model.Make}`}</label>
         <hr />
-        <p style={{fontWeight: "bold"}}>Net Price: ${this.props.price}</p>
-        <p>{"VIN " + this.props.vin}</p>
-        <button className='button'>View Details</button>
+        <p style={{fontWeight: "bold"}}>Net Price: ${this.props.details.Pricing.MSRP}</p>
+        <p>{"VIN " + this.props.details.Vin}</p>
+        <Link to={{
+          pathname: '/details',
+          search: '',
+          hash: '',
+          state: this.props.details
+        }}>
+          <button className='button'>View Details</button>
+        </Link>
       </div>
     )
   }
