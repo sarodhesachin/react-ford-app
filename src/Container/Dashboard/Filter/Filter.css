@@ -1,0 +1,33 @@
+.Filter {
+	display: inherit;
+	flex-direction: column;
+	padding: 30px;
+	font-size: 12px;
+	box-shadow: 0px 0px 1px 0px;
+	width: 25%;
+}
+
+#filter-text {
+	color: green;
+	font-weight: bold;
+}
+
+.FilterHeader {
+	display: inherit;
+	padding-top: 20px;
+}
+
+.FilterName {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.Circle {
+  margin: 3px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
