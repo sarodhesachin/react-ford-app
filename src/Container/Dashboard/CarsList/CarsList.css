@@ -1,0 +1,30 @@
+.CarsListContainer {
+	padding: 35px;
+}
+
+.CarsList{
+	display: flex;
+	flex-flow: wrap;
+}
+
+.Car {
+	padding: 10px;
+	background-color: ghostwhite;
+	margin: 20px;
+	font-size: 15px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 2%;
+	width: 100%;
+}
