@@ -8,7 +8,7 @@ import './Container.css'
 class Container extends React.Component {
   render() {
     return (
-      <div className='Container'>
+      <div className='container'>
         <Router>
          <Route exact path="/" component={Dashboard} />
          <Route exact path="/details" component={CarDetails} />

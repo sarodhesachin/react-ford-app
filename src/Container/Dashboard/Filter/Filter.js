@@ -21,7 +21,6 @@ class Filter extends React.Component {
 
         let filter = filterResponse.Response.FilterDefinitions.FilterDefinition
         if(Array.isArray(filter)) {
-          console.log(filter)
           this.setState({
             exteriorFilter: filter[2].FilterItems.FilterItem,
             interiorFilter: filter[3].FilterItems.FilterItem
@@ -33,7 +32,7 @@ class Filter extends React.Component {
 
   render() {
     return (
-      <div className='Filter'>
+      <div className='filter'>
         <div id='filter-text'>Filters</div>
         <ExteriorColorFilter 
           exteriorFilter={this.state.exteriorFilter}
@@ -53,14 +52,14 @@ class Filter extends React.Component {
 class FilterHeader extends React.Component {
   render() {
     return (
-      <div className='FilterHeader'>
-        <div className='FilterName'>
+      <div className='filter-header'>
+        <div className='filter-name'>
           <div>{this.props.filterHeader}</div>
           <button 
             style={{backgroundColor: 'white', border: "none", cursor: "pointer"}}
             onClick={this.props.resetHandler}
           >
-            <img className='Reset' src={reset} />
+            <img className='reset' src={reset} />
           </button>
         </div>
         <hr />
@@ -106,7 +105,7 @@ class ExteriorColorButton extends React.Component {
   render() {
     return (
       <span 
-        className='Circle'
+        className='circle'
         name={this.props.name}
         id={this.props.ID}
         style={{backgroundColor: this.props.color}} 
@@ -151,9 +150,9 @@ class InteriorColorFilter extends React.Component {
 class InteriorColorButton extends React.Component {
   render() {
     return (
-      <button className='InteriorFiltersOptions' onClick={this.props.interiorFilterHandler}>
+      <button className='interior-filters-options' onClick={this.props.interiorFilterHandler}>
         <img 
-          className='Circle' 
+          className='circle' 
           id={this.props.ID} 
           src={this.props.imgSource}
         />

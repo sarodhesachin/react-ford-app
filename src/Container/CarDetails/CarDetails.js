@@ -10,13 +10,13 @@ class CarDetails extends Component {
     let imgUrl = prefix + this.props.location.state.ImageToken + suffix;
 
     return(
-      <div className="car-details-container">
+      <div>
         <BasicDeatils 
           url={imgUrl} 
           model={this.props.location.state.Model} 
           price={this.props.location.state.Pricing.MSRP} 
         />
-        <hr/>
+        <div><hr /></div>
         <Summary carDetails={this.props.location.state} />
       </div>
     )

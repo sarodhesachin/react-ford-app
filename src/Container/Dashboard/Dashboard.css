@@ -1,3 +1,12 @@
-.Dashboard {
+.dashboard {
 	display: flex;
+}
+
+@media all and (max-width: 31.250em) {
+  .dashboard {
+    /* On small screens, we are no longer using row direction but column */
+		flex-direction: column;
+		/* max-width: 25.000em; */
+		width: 100%
+  }
 }

@@ -1,8 +1,8 @@
-.Container {
-    background-color: white;
-    position: absolute;
-    z-index: 1;
-    top: 130px;
-    left: 40px;
-    right: 40px;
+.container {
+	background-color: #FFFFFF;
+	z-index: 1;
+	left: 2em;
+	top: 10em;
+	right: 2em;
+	position: absolute;
 }

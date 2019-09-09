@@ -1,57 +1,53 @@
 .summary-section{
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-around;
 }
 
 .price-summary-section{
-  align-items: flex-start;
-  margin: 100px;
-  width: 350px;
+	align-items: flex-start;
+	margin-top: 3.125em;
 }
 
 .info-section{
-  display: flex;
+	display: flex;
   justify-content: space-between;
-  width: 290px;
+	min-width: 15.625em;
 }
 
 .vehicle-summary-section{
   display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-  width: 290px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 1px 1px 1px 1px #888888;
-}
-
-.car-details-container{
-	display: flex;
-	flex-direction: column;
-	margin: 50px;
-	color: black;
+  padding: 0.625em;
+	box-shadow: 0.063em 0.063em 0.063em 0.063em #888888;
+	margin-top: 3.125em;
+	min-width: 18.750em;
 }
 
 .basic-details-section{
-  background-color: white;
-  padding: 50px;
+  background-color: #FFFFFF;
+  padding: 3.125em;
   display: flex;
-  flex-direction: row;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-around;
 }
 
 .name-section{
-	padding: 50px;
+	padding-top: 3.125em;
 }
 
 
 .details-btn{
   background-color: #4CAF50;
-  color: white;
-  padding: 10px 25px;
+  color: #FFFFFF;
+  padding: 0.625em 1.563em;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.000em;
   cursor: pointer;
-	border-radius: 2px;
+	border-radius: 0.125em;
 	border: none;
 }
 

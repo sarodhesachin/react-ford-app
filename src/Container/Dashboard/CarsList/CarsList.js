@@ -7,7 +7,7 @@ class CarsListContainer extends React.Component {
 
   render() {
     return (
-      <div className='CarsListContainer'>
+      <div className='cars-list-container'>
         <div>
           <p>DASHBOARD</p>
         </div>
@@ -22,7 +22,7 @@ class Cars extends React.Component {
 
     let cars = <div></div>
     if (Array.isArray(this.props.carDetails)) {
-      cars = <div className='CarsList'>
+      cars = <div className='cars-list'>
         {
           this.props.carDetails.map(car => {
             return (
@@ -45,7 +45,7 @@ class Car extends React.Component {
     let imgSource = `http://build.ford.com/dig/Ford/${this.props.details.Model.ModelName}/${this.props.details.Model.Year}/HD-FULL/${this.props.details.ImageToken}/EXT/1/vehicle.png?r=NaN`
 
     return (
-      <div className='Car'>
+      <div className='car'>
         <img src={imgSource}/>
         <label>{`${this.props.details.Model.Year} ${this.props.details.Model.ModelName} ${this.props.details.Model.Make}`}</label>
         <hr />

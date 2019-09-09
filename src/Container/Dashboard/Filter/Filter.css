@@ -1,10 +1,16 @@
-.Filter {
-	display: inherit;
+.filter {
+	display: flex;
 	flex-direction: column;
-	padding: 30px;
-	font-size: 12px;
-	box-shadow: 1px 1px 1px 0px;
-	min-width: 150px;
+	padding: 1.875em;
+	font-size: 0.750em;
+	box-shadow: 0.063em 0.063em 0.063em 0.000em;
+	min-width: 13.375em;
+}
+
+@media all and (max-width: 37.500em) {
+  .filter {
+		min-width: 9.375em;
+  }
 }
 
 #filter-text {
@@ -12,27 +18,27 @@
 	font-weight: bold;
 }
 
-.FilterHeader {
+.filter-header {
 	display: inherit;
-	padding-top: 20px;
+	padding-top: 1.250em;
 }
 
-.FilterName {
+.filter-name {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.Circle {
-  margin: 3px;
-  height: 25px;
-  width: 25px;
+.circle {
+  margin: 0.188em;
+  height: 2.1em;
+  width: 2.1em;
   border-radius: 50%;
 	display: inline-block;
 	cursor: pointer;
 }
 
-.InteriorFiltersOptions {
+.interior-filters-options {
 	display: flex;
 	background-color: white;
 	border: none;
@@ -40,6 +46,6 @@
 	cursor: pointer;
 }
 
-.Reset {
-	height: 10px;
+.reset {
+	height: 0.625em;
 }

@@ -1,32 +1,33 @@
-.CarsListContainer {
-	padding: 35px;
+.cars-list-container {
+	padding-left: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.CarsList{
+.cars-list{
 	display: flex;
 	flex-flow: wrap;
 	justify-content: space-around;
 }
 
-.Car {
-	padding: 10px;
-	background-color: ghostwhite;
-	border-radius: 2%;
-	margin: 20px;
-	font-size: 15px;
+.car {
+	padding: 0.725em;
+	background-color: #F8F8FF;
+	border-radius: 0.225em;
+	margin-top: 1.250em;
+	font-size: 0.938em;
+	min-width: 13em;
 }
 
 .button {
   background-color: #4CAF50;
   border: none;
-  color: white;
-  padding: 12px 28px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
+  color: #FFFFFF;
+  padding: 0.750em 1.750em;
+  font-size: 0.875em;
+  margin: 0.250em 0.125em;
 	cursor: pointer;
-	border-radius: 2%;
+	border-radius: 0.125em;
 	width: 100%;
 }
