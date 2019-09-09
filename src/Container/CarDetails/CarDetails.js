@@ -16,7 +16,7 @@ class CarDetails extends Component {
           model={this.props.location.state.Model} 
           price={this.props.location.state.Pricing.MSRP} 
         />
-        <div><hr /></div>
+        <div><hr style={{marginLeft:50, marginRight: 50}}/></div>
         <Summary carDetails={this.props.location.state} />
       </div>
     )
@@ -26,36 +26,36 @@ class CarDetails extends Component {
 class BasicDeatils extends Component {
 
   render() {
-      return (
-          <div className="basic-details-section">
-              <ImageSection url={this.props.url} />
-              <NameSection model={this.props.model} price={this.props.price}/>
-          </div>
-      )
+    return (
+      <div className="basic-details-section">
+        <ImageSection url={this.props.url} />
+        <NameSection model={this.props.model} price={this.props.price}/>
+      </div>
+    )
   }
 }
 
 class ImageSection extends Component {
 
   render() {
-      return (
-          <div className="image-list-section">
-              <img height="250px" width="500px" src={this.props.url}  />
-          </div>
-      )
+    return (
+      <div className="image-list-section">
+        <img height="15.625em" width="31.250em" src={this.props.url}  />
+      </div>
+    )
   }
 }
 
 class NameSection extends Component {
 
   render() {
-      return (
-          <div className="name-section">
-              <h2><label>{this.props.model.Year + " " + this.props.model.ModelName + " " + this.props.model.Make}</label></h2>
-              <h4> Price : ${this.props.price}*</h4>
-              <button className="details-btn" >Get an Internet Price</button>
-          </div>
-      )
+    return (
+      <div className="name-section">
+        <h2><label>{this.props.model.Year + " " + this.props.model.ModelName + " " + this.props.model.Make}</label></h2>
+        <h4> Price : ${this.props.price}*</h4>
+        <button className="details-btn" >Get an Internet Price</button>
+      </div>
+    )
   }
 }
 

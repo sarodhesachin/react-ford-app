@@ -3,6 +3,7 @@
 	flex-direction: row;
 	flex-flow: wrap;
 	justify-content: space-around;
+	padding-bottom: 2.500em;
 }
 
 .price-summary-section{
