@@ -1,4 +1,12 @@
-.Header {
-	background-color: #282c34;
+.header {
+	background-color: #222222;
 	height: 30vh;
+	display: flex;
+	justify-content: center;
+}
+
+.logo {
+	height: 4.688em;
+	width: 9.375em;
+	margin-top: 2.188em;
 }

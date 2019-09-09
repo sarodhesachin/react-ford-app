@@ -1,8 +1,8 @@
 .container {
 	background-color: #FFFFFF;
-	z-index: 1;
-	left: 2em;
-	top: 10em;
-	right: 2em;
-	position: absolute;
+	margin-left: 2em;
+	top: -3.750em;
+	margin-right: 2em;
+	position: relative;
+	box-shadow: 0.063em 0.063em 1em 0em;
 }

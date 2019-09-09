@@ -1,0 +1,30 @@
+.footer-logo {
+	height: 4.688em;
+	width: 9.375em;
+	margin-left: 1.250em;
+}
+
+.footer{
+	margin-left: 2em;
+}
+
+.footer-content{
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+  justify-content: space-around;
+  font-size: 0.938em;
+  margin: 1.250em;
+}
+
+@media all and (max-width: 28.125em) {
+  .footer-content {
+		flex-direction: column;
+		width: 100%;
+  }
+}
+
+.footer-single-section{
+	justify-content: flex-start;
+	padding: 1.250em;
+}

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import logo from '../black.jpg'
 import './Header.css'
 
 class Header extends React.Component {
   render() {
     return (
-      <div className='Header'>
+      <div className='header'>
+        <img className='logo' src={logo} />
       </div>
     )
   }

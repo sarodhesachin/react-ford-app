@@ -3,6 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 2em;
 }
 
 .cars-list{
@@ -15,7 +16,8 @@
 	padding: 0.725em;
 	background-color: #F8F8FF;
 	border-radius: 0.225em;
-	margin-top: 1.250em;
+	margin-top: 0.938em;
+	margin-bottom: 0.938em;
 	font-size: 0.938em;
 	min-width: 13em;
 }
