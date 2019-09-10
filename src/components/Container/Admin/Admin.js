@@ -2,17 +2,23 @@ import React from 'react';
 import ReactHighcharts from 'react-highcharts';
 import { connect } from "react-redux";
 
+import './Admin.css'
+
 class Admin extends React.Component {
   render() {
 
-    console.log(this.props)
+    let charts = [{
+      title: "Details Click Count",
+      categories: Object.keys(this.props.clicksCount),
+      y_axis_title: "Clicks Count",
+      series: Object.values(this.props.clicksCount)
+    }]
 
     return (
-      <div>
-        <div>HEADING</div>
-        <div>SUB-HEADING</div>
+      <div className='admin-page'>
+        <div className='admin-page-heading'>User Interaction statistics</div>
         <div><hr /></div>
-        <ChartsContainer charts={[]}/>
+        <ChartsContainer charts={charts}/>
       </div>
     )
   }
@@ -21,7 +27,7 @@ class Admin extends React.Component {
 class ChartsContainer extends React.Component {
   render() {
     return (
-      <div>
+      <div className='charts-list'>
         {
           this.props.charts.map(chart => {
             return <Chart config={chart} />
@@ -38,7 +44,7 @@ class Chart extends React.Component {
 
     let config = {
       chart: {
-        type: 'column'
+        type: 'column',
       },
       title: {
         text: this.props.config.title
@@ -51,7 +57,8 @@ class Chart extends React.Component {
         allowDecimals: false,
         title: {
           text: this.props.config.y_axis_title
-        }
+        },
+        maxPadding: 1
       },
       plotOptions: {
         column: {
@@ -69,18 +76,17 @@ class Chart extends React.Component {
 
     return (
       <div>
-        <ReactHighcharts config={config} />
+        <div className='chart'>
+          <ReactHighcharts config={config} />
+        </div>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-
-  console.log(state)
-
   return {
-    clicksCount: state.clicksCount
+    clicksCount: state.clickCountReducer
   };
 };
 export default connect(mapStateToProps)(Admin);

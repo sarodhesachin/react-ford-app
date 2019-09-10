@@ -11,8 +11,6 @@ export default function clicksCountReducer(state=clicksCount, action) {
         temp[action.carId] = 0
       }
       temp[action.carId] += 1
-
-      console.log(temp)
       return temp;
     default:
       return state;

@@ -34,3 +34,13 @@
 	border-radius: 0.125em;
 	width: 100%;
 }
+
+.heading-col-1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.admin-link {
+	margin: 1em;
+}

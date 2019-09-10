@@ -16,8 +16,9 @@ class CarsListContainer extends React.Component {
   render() {
     return (
       <div className='cars-list-container'>
-        <div>
+        <div className='heading-col-1'>
           <p>DASHBOARD</p>
+          <Link className='admin-link' to="/admin">admin</Link>
         </div>
         <Cars carDetails={this.props.carDetails} clickHandler={this.countClick} />
       </div>
@@ -39,7 +40,6 @@ class Cars extends React.Component {
           })
         }
       </div>
-
     }
 
     return (
@@ -75,9 +75,6 @@ class Car extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("inside mapStateToProps")
-  console.log(state)
-
   return {
     clicksCount: state.clicksCount
   }
