@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router-dom';
 
-import history from './../../../../history'
 import './CarsList.css'
 
 class CarsListContainer extends React.Component {
@@ -13,7 +12,7 @@ class CarsListContainer extends React.Component {
       type: "CLICK",
       carId: event.target.id
     })
-    history.push('/details', {})
+    // history.push('/details', {})
   }
 
   render() {
@@ -53,6 +52,12 @@ class Cars extends React.Component {
 class Car extends React.Component {
   render() {
     let imgSource = `http://build.ford.com/dig/Ford/${this.props.details.Model.ModelName}/${this.props.details.Model.Year}/HD-FULL/${this.props.details.ImageToken}/EXT/1/vehicle.png?r=NaN`
+
+    this.props.history.push({
+      pathname: '/details',
+      search: '',
+      state: { detail: 'sachin' }
+    })
 
     return (
       <div className='car'>
