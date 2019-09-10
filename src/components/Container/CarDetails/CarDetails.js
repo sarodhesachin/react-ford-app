@@ -5,6 +5,7 @@ import './CarDetails.css'
 class CarDetails extends Component {
   render() {
 
+    console.log(this.props)
     let prefix = 'https://build.ford.com/dig/Ford/' + this.props.location.state.Model.ModelName + '/' + this.props.location.state.Model.Year + '/HD-FULL/';
     let suffix = '/EXT/1/vehicle.png?r=NaN';
     let imgUrl = prefix + this.props.location.state.ImageToken + suffix;

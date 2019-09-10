@@ -1,7 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Routers, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from 'react-redux'
+import {withRouter} from 'react-router-dom';
 
+import history from './../../../../history'
 import './CarsList.css'
 
 class CarsListContainer extends React.Component {
@@ -11,6 +13,7 @@ class CarsListContainer extends React.Component {
       type: "CLICK",
       carId: event.target.id
     })
+    history.push('/details', {})
   }
 
   render() {
@@ -39,7 +42,6 @@ class Cars extends React.Component {
           })
         }
       </div>
-
     }
 
     return (
@@ -80,4 +82,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(CarsListContainer);
+export default connect(mapStateToProps)(withRouter(CarsListContainer));

@@ -1,4 +1,5 @@
 import React from 'react';
+import history from './../../history';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Dashboard from './Dashboard/Dashboard'
@@ -9,7 +10,7 @@ class Container extends React.Component {
   render() {
     return (
       <div className='container'>
-        <Router>
+        <Router history={history}>
          <Route exact path="/" component={Dashboard} />
          <Route exact path="/details" component={CarDetails} />
         </Router>
