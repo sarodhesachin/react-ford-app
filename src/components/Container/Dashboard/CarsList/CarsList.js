@@ -1,9 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Routers, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux'
 
 import './CarsList.css'
 
 class CarsListContainer extends React.Component {
+
+  countClick = (event) => {
+    this.props.dispatch({
+      type: "CLICK",
+      carId: event.target.id
+    })
+  }
 
   render() {
     return (
@@ -11,7 +19,7 @@ class CarsListContainer extends React.Component {
         <div>
           <p>DASHBOARD</p>
         </div>
-        <Cars carDetails={this.props.carDetails}/>
+        <Cars carDetails={this.props.carDetails} clickHandler={this.countClick} />
       </div>
     )
   }
@@ -26,7 +34,7 @@ class Cars extends React.Component {
         {
           this.props.carDetails.map(car => {
             return (
-              <Car details={car} />
+              <Car details={car} clickHandler={this.props.clickHandler} />
             )
           })
         }
@@ -57,11 +65,19 @@ class Car extends React.Component {
           hash: '',
           state: this.props.details
         }}>
-          <button className='button'>View Details</button>
+          <button className='button' id={this.props.details.Vin} onClick={this.props.clickHandler}>
+            View Details
+          </button>
         </Link>
       </div>
     )
   }
 }
 
-export default CarsListContainer;
+function mapStateToProps(state) {
+  return {
+    clicksCount: state.clicksCount
+  }
+}
+
+export default connect(mapStateToProps)(CarsListContainer);

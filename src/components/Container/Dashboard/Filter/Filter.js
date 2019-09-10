@@ -1,8 +1,8 @@
 import React from 'react';
 
-import reset from '../../../refresh.svg'
+import reset from '../../../../refresh.svg'
 
-import constants from '../../../constants'
+import constants from '../../../../constants'
 import './Filter.css'
 
 class Filter extends React.Component {

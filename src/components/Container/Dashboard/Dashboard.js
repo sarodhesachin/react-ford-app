@@ -3,7 +3,7 @@ import React from 'react';
 import './Dashboard.css'
 import Filter from './Filter/Filter'
 import CarsList from './CarsList/CarsList'
-import constants from '../../constants'
+import constants from '../../../constants'
 
 class Dashboard extends React.Component {
 

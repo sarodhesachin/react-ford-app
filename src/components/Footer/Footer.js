@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import logo from '../ford-logo.png'
-import constants from '../constants'
+import logo from '../../ford-logo.png'
+import constants from '../../constants'
 import './Footer.css'
 
 class Footer extends Component {

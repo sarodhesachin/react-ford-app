@@ -40,7 +40,7 @@ class ImageSection extends Component {
   render() {
     return (
       <div className="image-list-section">
-        <img height="15.625em" width="31.250em" src={this.props.url}  />
+        <img style={{height: 250, width: 500}} src={this.props.url}  />
       </div>
     )
   }
