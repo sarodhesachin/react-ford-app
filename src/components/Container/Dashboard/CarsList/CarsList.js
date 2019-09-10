@@ -75,6 +75,9 @@ class Car extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log("inside mapStateToProps")
+  console.log(state)
+
   return {
     clicksCount: state.clicksCount
   }
