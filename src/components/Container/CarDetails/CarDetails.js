@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import InternetPrice from './InternetPrice/InternetPrice'
+import CarImage from './CarImage/CarImage'
 import './CarDetails.css'
 
 class CarDetails extends Component {
@@ -28,19 +30,8 @@ class BasicDeatils extends Component {
   render() {
     return (
       <div className="basic-details-section">
-        <ImageSection url={this.props.url} />
-        <NameSection model={this.props.model} price={this.props.price}/>
-      </div>
-    )
-  }
-}
-
-class ImageSection extends Component {
-
-  render() {
-    return (
-      <div className="image-list-section">
-        <img style={{height: 250, width: 500}} src={this.props.url}  />
+        <CarImage url={this.props.url} height={250} width={500}/>
+        <NameSection model={this.props.model} price={this.props.price} url={this.props.url}/>
       </div>
     )
   }
@@ -48,12 +39,36 @@ class ImageSection extends Component {
 
 class NameSection extends Component {
 
+  state = {
+    isOpen: false
+  }
+
+  getInternetPrice = () => {
+    this.setState({
+      isOpen: true
+    })
+  }
+
+  onClose = () => {
+    this.setState({
+      isOpen: false
+    })
+  }
+
   render() {
     return (
       <div className="name-section">
         <h2><label>{this.props.model.Year + " " + this.props.model.ModelName + " " + this.props.model.Make}</label></h2>
         <h4> Price : ${this.props.price}*</h4>
-        <button className="details-btn" >Get an Internet Price</button>
+        <button className="details-btn" onClick={this.getInternetPrice}>
+          Get an Internet Price
+        </button>
+        <InternetPrice 
+          isOpen={this.state.isOpen} 
+          onClose={this.onClose}
+          url={this.props.url}
+          model={this.props.model}
+        />
       </div>
     )
   }
