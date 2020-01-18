@@ -1,0 +1,10 @@
+.dashboard {
+	display: flex;
+}
+
+@media all and (max-width: 31.250em) {
+  .dashboard {
+		flex-direction: column;
+		width: 100%
+  }
+}

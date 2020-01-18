@@ -1,0 +1,51 @@
+.filter {
+	display: flex;
+	flex-direction: column;
+	padding: 1.875em;
+	font-size: 0.750em;
+	box-shadow: 0.063em 0.063em 0.063em 0.000em;
+	min-width: 13.375em;
+}
+
+@media all and (max-width: 37.500em) {
+  .filter {
+		min-width: 9.375em;
+  }
+}
+
+#filter-text {
+	color: green;
+	font-weight: bold;
+}
+
+.filter-header {
+	display: inherit;
+	padding-top: 1.250em;
+}
+
+.filter-name {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.circle {
+  margin: 0.188em;
+  height: 2.1em;
+  width: 2.1em;
+  border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.interior-filters-options {
+	display: flex;
+	background-color: white;
+	border: none;
+	align-items: center;
+	cursor: pointer;
+}
+
+.reset {
+	height: 0.625em;
+}

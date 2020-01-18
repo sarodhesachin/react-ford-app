@@ -1,0 +1,29 @@
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.admin-page-heading {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.charts-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.chart {
+  padding: 1.5em;
+  max-width: 25em;
+  margin-top: 2em;
+  box-shadow: 0.063em 0.063em 1em 0em;
+}
+
+@media all and (max-width: 37.500em) {
+  .chart {
+		min-width: 9.375em;
+  }
+}

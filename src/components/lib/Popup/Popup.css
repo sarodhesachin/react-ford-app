@@ -1,0 +1,41 @@
+.popup-header {
+  border-bottom: 0.003em solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.close-button-x {
+  border: none;
+  background-color: #FFFFFF;
+  font-size: 0.938em;
+  color: #808080;
+}
+
+.popup-footer {
+  padding: 1.5em;
+}
+
+.cancel-btn {
+  background-color: #E1E3F8;
+  color: #000000;
+  padding: 0.625em 1.563em;
+  text-align: center;
+  font-size: 1.000em;
+  cursor: pointer;
+	border-radius: 0.125em;
+  border: none;
+  margin-right: 1em;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  padding: 0.625em 1.563em;
+  text-align: center;
+  font-size: 1.000em;
+  cursor: pointer;
+	border-radius: 0.125em;
+	border: none;
+}
