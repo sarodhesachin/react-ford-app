@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Routers, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { connect } from 'react-redux'
 
 import './CarsList.css'
@@ -33,9 +33,9 @@ class Cars extends React.Component {
     if (Array.isArray(this.props.carDetails)) {
       cars = <div className='cars-list'>
         {
-          this.props.carDetails.map(car => {
+          this.props.carDetails.map((car, index) => {
             return (
-              <Car details={car} clickHandler={this.props.clickHandler} />
+              <Car details={car} clickHandler={this.props.clickHandler} key={index} />
             )
           })
         }
