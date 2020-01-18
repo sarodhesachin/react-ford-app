@@ -29,8 +29,8 @@ class ChartsContainer extends React.Component {
     return (
       <div className='charts-list'>
         {
-          this.props.charts.map(chart => {
-            return <Chart config={chart} />
+          this.props.charts.map((chart, index) => {
+            return <Chart config={chart} key={index} />
           })
         }
       </div>

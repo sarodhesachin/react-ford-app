@@ -49,8 +49,8 @@ class Form extends React.Component {
         <p style={{fontWeight: 'bold'}}>Contact Information</p>
         <div className='textbox-container'>
           {
-            formTextboxes.map(option => {
-              return <TextBox name={option.name} label={option.label} />
+            formTextboxes.map((option, index) => {
+              return <TextBox name={option.name} label={option.label} key={index} />
             })
           }
         </div>

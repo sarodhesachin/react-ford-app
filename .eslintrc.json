@@ -1,13 +1,28 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "amd": true,
+        "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "overrides": [
+        {
+            "files": ["**/serviceWorker.js", "*.jsx"],
+            "rules": {
+                "no-undef": "off",
+                "react/prop-types": "off"
+            }
+        }
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -19,5 +34,6 @@
         "react"
     ],
     "rules": {
+        "react/jsx-uses-vars": [2]
     }
 }

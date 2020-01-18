@@ -23,8 +23,8 @@ class FooterSection extends Component {
     return (
       <div className="footer-content">
         {
-          Object.keys(constants.FOOTER_ITEMS).map(header => {
-            return <div><SingleSection heading={header} items={constants.FOOTER_ITEMS[header]} /></div>
+          Object.keys(constants.FOOTER_ITEMS).map((header, index) => {
+            return <div key={index}><SingleSection heading={header} items={constants.FOOTER_ITEMS[header]} /></div>
           })
         }
       </div>
@@ -38,8 +38,8 @@ class SingleSection extends Component {
       <div className="footer-single-section">
         <h4>{this.props.heading}</h4>
         {
-          this.props.items.map((item) => {
-            return <p>{item}</p>
+          this.props.items.map((item, index) => {
+            return <p key={index}>{item}</p>
           })
         }
       </div>

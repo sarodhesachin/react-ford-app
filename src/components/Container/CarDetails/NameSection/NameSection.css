@@ -1,0 +1,14 @@
+.name-section{
+	padding-top: 3.125em;
+}
+
+.details-btn{
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  padding: 0.625em 1.563em;
+  text-align: center;
+  font-size: 1.000em;
+  cursor: pointer;
+	border-radius: 0.125em;
+	border: none;
+}
