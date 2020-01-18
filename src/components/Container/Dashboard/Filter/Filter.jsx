@@ -75,12 +75,13 @@ class ExteriorColorFilter extends React.Component {
     if (Array.isArray(this.props.exteriorFilter)) {
       colorsList = <div>
         {
-          this.props.exteriorFilter.map(element => {
+          this.props.exteriorFilter.map((element, index) => {
             return <ExteriorColorButton 
               name={element.Name} 
               ID={element.ID} 
               color={'#' + element.SwatchHexCode.slice(2)}
               exteriorFilterHandler={this.props.exteriorFilterHandler}
+              key={index}
             />
           })
         }
@@ -122,13 +123,14 @@ class InteriorColorFilter extends React.Component {
     if (Array.isArray(this.props.interiorFilter)) {
       colorsList = <div>
         {
-          this.props.interiorFilter.map(element => {
+          this.props.interiorFilter.map((element, index) => {
             return <InteriorColorButton 
               imgSource={element.SwatchUrl}
               name={element.Name} 
               ID={element.ID} 
               group={element.Group} 
               interiorFilterHandler={this.props.interiorFilterHandler}
+              key={index}
             />
           })
         }
