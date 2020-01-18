@@ -19,5 +19,13 @@
         "react"
     ],
     "rules": {
-    }
+    },
+    "overrides": [
+        {
+            "files": ["**/serviceWorker.js"],
+            "rules": {
+                "no-undef": "off"
+            }
+        }
+    ]
 }
