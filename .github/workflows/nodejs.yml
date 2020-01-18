@@ -24,6 +24,6 @@ jobs:
     - name: Check lint errors
       run: |
         npm install eslint
-        ./node_modules/.bin/eslint --ext .js .
+        ./node_modules/.bin/eslint --ext .jsx,.js .
       env:
         CI: true
